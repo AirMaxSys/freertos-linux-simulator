@@ -172,10 +172,10 @@ int main( void )
     console_init();
     #if ( mainSELECTED_APPLICATION == BLINKY_DEMO )
         {
-		#if 0
+#if 0
             console_print( "Starting echo blinky demo\n" );
             main_blinky();
-		#endif
+#endif
         }
     #elif ( mainSELECTED_APPLICATION == FULL_DEMO )
         {
@@ -188,7 +188,7 @@ int main( void )
         }
     #endif /* if ( mainSELECTED_APPLICATION ) */
 	
-	main_cli();
+    main_cli();
 
     return 0;
 }
