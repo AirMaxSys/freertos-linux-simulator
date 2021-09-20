@@ -85,6 +85,10 @@
 /* This demo uses heap_3.c (the libc provided malloc() and free()). */
 
 /*-----------------------------------------------------------*/
+
+// Test CLI funtion
+extern void main_cli( void );
+
 extern void main_blinky( void );
 extern void main_full( void );
 static void traceOnEnter( void );
@@ -168,8 +172,10 @@ int main( void )
     console_init();
     #if ( mainSELECTED_APPLICATION == BLINKY_DEMO )
         {
+		#if 0
             console_print( "Starting echo blinky demo\n" );
             main_blinky();
+		#endif
         }
     #elif ( mainSELECTED_APPLICATION == FULL_DEMO )
         {
@@ -181,6 +187,8 @@ int main( void )
             #error "The selected demo is not valid"
         }
     #endif /* if ( mainSELECTED_APPLICATION ) */
+	
+	main_cli();
 
     return 0;
 }
