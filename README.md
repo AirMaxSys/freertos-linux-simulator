@@ -1,5 +1,5 @@
 ### Brief
-This repository is a simulator of FreeRTOS in Posix/Linux. Running in windows WSL2.
+This repository is a simulator of FreeRTOS in Posix/Linux. It can run in WSL.
 ### Clone repository
 ```
 git clone https://github.com/AirMaxSys/freertos-linux-simulator.git --recurse-submodules
