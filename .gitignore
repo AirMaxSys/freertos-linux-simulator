@@ -1,1 +1,5 @@
 build
+
+# Generate by FreeRTOS Trace Module
+Trace.dump
+
