@@ -89,6 +89,9 @@
 // Test CLI funtion
 extern void main_cli( void );
 
+// Test Quue
+extern void main_queue( void );
+
 extern void main_blinky( void );
 extern void main_full( void );
 static void traceOnEnter( void );
@@ -188,8 +191,16 @@ int main( void )
         }
     #endif /* if ( mainSELECTED_APPLICATION ) */
 	
+#if 1
     main_cli();
+    main_queue();
 
+    vTaskStartScheduler();
+#endif
+
+    for (;;) {
+    
+    }
     return 0;
 }
 /*-----------------------------------------------------------*/

@@ -10,7 +10,7 @@
 #include "FreeRTOS_CLI.h"
 #include "console.h"
 
-#define CLI_PRIORITY    100
+#define CLI_PRIORITY    1
 #define CLI_STACK_SIZE  1024
 
 #define CLI_IP_BUF_LEN  512
@@ -66,7 +66,6 @@ static void vConsoleInterpreterTask(void *para)
             fprintf(stderr, "INPUT ERROR!\n");
             continue;
         }
-#endif
         // Get input command
         while ((read_ret = read(STDIN_FILENO, &ch, 1)) != 0) {
             if (ch != '\n' && ch != '\0') {
@@ -85,6 +84,7 @@ static void vConsoleInterpreterTask(void *para)
             fprintf(stderr, "ERRNO[%d]:%s\n", errno, strerror(errno));
             read_ret = 0;
         }
+#endif
 
         // Restore previous masked signal set
         if (pthread_sigmask(SIG_SETMASK, &prev_mask, NULL) < 0)
@@ -112,8 +112,8 @@ void main_cli(void)
     vRegisterSampleCLICommands();
     vConsoleStart();
 
-    vTaskStartScheduler();
+    //vTaskStartScheduler();
 
-    while (1);
+    // while (1);
 }
 
